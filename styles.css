@@ -549,6 +549,224 @@ details[open] .details-sign { transform: rotate(45deg); }
   .closing h2 { font-size: 31px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition: none !important; animation: none !important; } }
+/* Ajustes de lectura · octubre de 2026.
+   Aplican a pantalla; la composición para imprimir conserva sus proporciones. */
+@media screen {
+  :root {
+    --muted: #41403a;
+    --red-text: #ad1d25;
+    --on-dark: #e8e1d6;
+    --body: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  body { line-height: 1.6; }
+  .brand-name small { font-size: 11px; }
+  .desktop-nav a, .print-button { font-size: 14px; }
+  .eyebrow { color: var(--red-text); font-size: 12px; letter-spacing: .1em; }
+  .eyebrow.small { font-size: 12px; }
+  .eyebrow.light { color: var(--on-dark); }
+  .hero-description { color: var(--on-dark); font-size: 18px; line-height: 1.7; }
+  .hero-tags span { font-size: 12px; }
+  .hero-link { font-size: 14px; }
+  .hero-bottom-intro { font-size: 13px; color: var(--on-dark); }
+  .index-mark { font-size: 11px; color: #d4cbbd; }
+  .hero-stat > span { font-size: 14px; color: #f7f1e6; line-height: 1.5; }
+  .hero-stat small { font-size: 12px; color: var(--on-dark); margin-top: 5px; }
+  .section-intro { font-size: 16px; line-height: 1.75; }
+  .section-number { font-size: 12px; }
+  .total-card-top { font-size: 14px; }
+  .period-pill { font-size: 12px; }
+  .platform-totals { font-size: 13px; gap: 14px 22px; }
+  .platform-totals b { font-size: 15px; }
+  .total-dark .period-pill, .total-dark .platform-totals > span { color: var(--on-dark); }
+  h3 { font-size: 20px; }
+  .panel-heading p { font-size: 14px; line-height: 1.6; }
+  .segmented-control button { font-size: 12px; padding: 9px 12px; min-height: 38px; }
+  .chart-legend { font-size: 13px; }
+  .chart-legend .legend-unit { font-size: 12px; }
+  .chart-axis-label { fill: #4b4a43; font-size: 12px; }
+  .chart-month-label { fill: var(--ink); font-size: 14px; }
+  .chart-value-label { font-size: 15px; }
+  .chart-readout { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 16px; padding: 14px 16px; font-size: 13px; line-height: 1.5; }
+  .chart-readout .readout-period { grid-column: 1 / -1; font-size: 13px; margin-right: 0; width: auto; }
+  .chart-readout > span:not(.readout-period) { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .chart-readout b { font-size: 15px; margin-left: 0; }
+  .chart-readout .readout-total b { color: var(--red-text); }
+  .chart-caption, .source-note { font-size: 13px; line-height: 1.75; }
+  .distribution-panel h3 { font-size: 20px; }
+  .donut-center small { font-size: 13px; }
+  .donut-legend { font-size: 13px; }
+  .donut-legend strong { font-size: 14px; }
+  .donut-legend strong small { display: block; font-size: 12px; text-align: right; margin: 3px 0 0; }
+  .monthly-table > summary { font-size: 14px; }
+  .data-table { font-size: 14px; }
+  .data-table caption { font-size: 13px; }
+  .data-table thead th { font-size: 12px; }
+  .data-table tfoot td:last-child { color: var(--red-text); }
+  .budget-context { font-size: 14px; line-height: 1.75; }
+  .method-details { font-size: 14px; }
+  .method-details > summary { font-size: 13px; }
+  .mini-badge { font-size: 12px; }
+  .contact-total { background: #c12127; }
+  .contact-total .eyebrow, .contact-total > p:not(.eyebrow), .contact-total-bottom > span { color: white; }
+  .contact-number > span { font-size: 15px; }
+  .contact-total > p:not(.eyebrow) { font-size: 14px; line-height: 1.75; }
+  .contact-total-bottom > span, .contact-total-bottom small { font-size: 12px; }
+  .profiles-heading > span, .profile-index { font-size: 12px; }
+  .profile-card h4 { font-size: 17px; line-height: 1.3; }
+  .profile-card p { font-size: 14px; line-height: 1.7; }
+  .commercial-heading > p:last-child { font-size: 15px; line-height: 1.75; }
+  .commercial-metrics span { font-size: 14px; }
+  .case-type, .case-highlight strong span, .case-footnote { font-size: 12px; }
+  .case-footnote { color: var(--muted); }
+  .case-card h4 { font-size: 20px; line-height: 1.25; }
+  .case-card > p { font-size: 14px; line-height: 1.75; }
+  .case-card > .case-main-result { font-size: 18px; line-height: 1.4; }
+  .featured-case .case-type, .featured-case .case-highlight strong span, .featured-case > p, .featured-case .case-footnote { color: var(--on-dark); }
+  .channel-top { flex-wrap: wrap; }
+  .channel-badge { font-size: 12px; }
+  .channel-result > span { font-size: 15px; }
+  .channel-metrics span { font-size: 13px; }
+  .channel-insight { font-size: 15px; line-height: 1.75; }
+  .google-card .channel-badge, .google-card .channel-result > span, .rank-row > span, .google-insight p { color: var(--on-dark); }
+  .rank-row > span { font-size: 14px; }
+  .rank-row > strong { font-size: 15px; }
+  .google-insight p { font-size: 14px; line-height: 1.7; }
+  .blended-cost .eyebrow { font-size: 12px; }
+  .blended-cost h3 { font-size: 16px; line-height: 1.35; }
+  .blended-cost > p { font-size: 13px; line-height: 1.75; }
+  .brand-creative figcaption { font-size: 12px; color: white; }
+  .visibility-card .eyebrow { color: var(--on-dark); }
+  .visibility-card > p:not(.eyebrow) { font-size: 15px; color: var(--on-dark); line-height: 1.75; }
+  .visibility-secondary span { font-size: 14px; color: var(--on-dark); }
+  .visibility-card > .visibility-note { font-size: 13px !important; color: var(--on-dark) !important; }
+  .followup-donut-panel h3 { font-size: 20px; line-height: 1.3; }
+  .followup-donut .donut-center small { font-size: 13px; }
+  .followup-head > p:last-child { font-size: 15px; line-height: 1.75; max-width: 470px; }
+  .pending-row { grid-template-columns: 1fr 100px 55px; }
+  .pending-row > span:first-child { font-size: 14px; }
+  .pending-row strong { font-size: 15px; }
+  .pending-row small, .pending-percent { font-size: 13px; }
+  .followup-note { font-size: 14px; line-height: 1.75; }
+  .followup-actions article > span { font-size: 13px; color: var(--red-text); }
+  .followup-actions h3 { font-size: 17px; line-height: 1.35; }
+  .followup-actions p { font-size: 14px; line-height: 1.75; }
+  .closing > p { font-size: 16px; color: var(--on-dark); line-height: 1.8; }
+  .method-grid h3 { font-size: 15px; }
+  .method-grid p { font-size: 14px; }
+  .footer-inner { font-size: 14px; }
+  .footer-inner span, .footer-inner a { font-size: 12px; }
+  .footer-inner a span { font-size: 17px; }
+}
+/* El fondo del hero se dibuja sobre el banner completo, fuera de la columna
+   de la imagen. Así puede extenderse hasta los bordes de cualquier escritorio. */
+@media screen and (min-width: 901px) {
+  .hero { isolation: isolate; }
+  .hero::before { content: ""; position: absolute; pointer-events: none; width: max(1200px, 118vw); aspect-ratio: 1; left: 72%; top: 42%; transform: translate(-50%, -50%); border: 1px solid #70373b; border-radius: 50%; background: radial-gradient(circle at 58% 50%, #572a29 0%, #321d1c 42%, #201817 70%, #171715 100%); box-shadow: 0 0 0 36px #171715, 0 0 0 37px #432b2b; z-index: 0; }
+  .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #171715 0%, #171715f2 27%, #17171570 57%, #17171500 85%); z-index: 0; }
+  .hero-inner { z-index: 1; }
+  .hero-art { overflow: visible; }
+  .hero-art::after, .hero-orbit { display: none; }
+  .art-label { font-size: 12px; color: #d4c3b1; }
+}
+@media screen and (min-width: 701px) and (max-width: 1100px) {
+  .panel-heading { flex-wrap: wrap; }
+  .budget-chart-layout { grid-template-columns: minmax(0, 1fr) 290px; }
+  .distribution-panel { min-width: 0; }
+  .case-card h4 { font-size: 19px; }
+  .blended-cost { grid-template-columns: minmax(0, 1fr) auto; }
+  .blended-cost > p { grid-column: 1 / -1; border-left: 0; padding-left: 0; }
+}
+@media screen and (max-width: 700px) {
+  .brand-name small { font-size: 9px; letter-spacing: .06em; }
+  .print-button { font-size: 11px; }
+  .eyebrow, .eyebrow.small { font-size: 11px; }
+  .hero-description { font-size: 15px; }
+  .hero-tags span { font-size: 10px; }
+  .hero-link { font-size: 12px; }
+  .hero-stat > span { font-size: 11px; }
+  .hero-stat small { font-size: 10px; line-height: 1.6; }
+  .section-intro { font-size: 14px; }
+  .section-number { font-size: 11px; }
+  .total-card-top { font-size: 12px; }
+  .period-pill { font-size: 10px; }
+  .platform-totals { font-size: 11px; }
+  .platform-totals b { font-size: 12px; }
+  .panel-heading h3 { font-size: 17px; line-height: 1.3; }
+  .panel-heading p { font-size: 12px; }
+  .segmented-control button { font-size: 11px; padding: 8px 10px; min-height: 36px; }
+  .chart-legend { font-size: 11px; }
+  .chart-legend .legend-unit { font-size: 10px; }
+  .chart-axis-label { font-size: 11px; }
+  .chart-month-label { font-size: 13px; }
+  .chart-value-label { font-size: 14px; }
+  .chart-readout { grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: 12px; padding: 12px; gap: 10px 14px; }
+  .chart-readout .readout-period { font-size: 12px; }
+  .chart-readout b { font-size: 14px; }
+  .chart-readout .readout-total { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; padding-top: 9px; border-top: 1px solid #d6cdbf; }
+  .chart-caption, .source-note { font-size: 12px; }
+  .distribution-panel h3 { font-size: 18px; }
+  .distribution-panel .donut-center small { font-size: 11px; }
+  .donut-legend { font-size: 11px; }
+  .donut-legend > div { gap: 8px; }
+  .donut-legend span { min-width: 0; }
+  .donut-legend strong { font-size: 12px; }
+  .donut-legend strong small { font-size: 10px; }
+  .monthly-table > summary, .data-table, .data-table caption { font-size: 12px; }
+  .data-table thead th { font-size: 11px; }
+  .budget-context, .method-details { font-size: 12px; }
+  .method-details > summary { font-size: 12px; }
+  .mini-badge { font-size: 10px; }
+  .contact-number > span { font-size: 12px; }
+  .contact-total > p:not(.eyebrow) { font-size: 12px; }
+  .contact-total-bottom > span, .contact-total-bottom small { font-size: 11px; }
+  .profiles-heading > span, .profile-index { font-size: 11px; }
+  .profile-card h4 { font-size: 15px; }
+  .profile-card p { font-size: 12px; }
+  .commercial-heading > p:last-child { font-size: 13px; }
+  .commercial-metrics span { font-size: 12px; }
+  .case-type, .case-highlight strong span, .case-footnote { font-size: 11px; }
+  .case-card h4 { font-size: 18px; }
+  .case-card > p { font-size: 13px; }
+  .case-card > .case-main-result { font-size: 16px; }
+  .channel-badge { font-size: 10px; }
+  .channel-result > span { font-size: 13px; }
+  .channel-metrics span { font-size: 12px; }
+  .channel-insight, .rank-row > span, .google-insight p { font-size: 13px; }
+  .rank-row > strong { font-size: 14px; }
+  .blended-cost .eyebrow { font-size: 11px; }
+  .blended-cost h3 { font-size: 15px; }
+  .blended-cost > p { font-size: 12px; }
+  .brand-creative figcaption { font-size: 11px; }
+  .visibility-card > p:not(.eyebrow), .visibility-secondary span { font-size: 13px; }
+  .visibility-card > .visibility-note { font-size: 12px !important; }
+  .followup-donut-panel h3 { font-size: 18px; }
+  .followup-donut-panel .donut-legend { font-size: 12px; }
+  .followup-donut-panel .donut-legend strong { font-size: 13px; }
+  .followup-head > p:last-child { font-size: 13px; }
+  .pending-row { grid-template-columns: minmax(0, 1fr) 90px 50px; }
+  .pending-row > span:first-child, .pending-row strong { font-size: 13px; }
+  .pending-row small, .pending-percent { font-size: 12px; }
+  .followup-note { font-size: 12px; }
+  .followup-actions h3 { font-size: 16px; }
+  .followup-actions p { font-size: 13px; }
+  .closing > p { font-size: 14px; }
+  .method-grid h3 { font-size: 14px; }
+  .method-grid p { font-size: 13px; }
+  .footer-inner { font-size: 12px; }
+  .footer-inner span, .footer-inner a { font-size: 11px; }
+  .footer-inner a span { font-size: 17px; }
+}
+@media screen and (max-width: 410px) {
+  .platform-totals { flex-direction: column; gap: 9px; }
+  .panel-heading { flex-wrap: wrap; }
+  .hero-bottom { gap: 10px; }
+  .hero-stat { padding-left: 8px; }
+  .distribution-panel .donut-legend { font-size: 10px; }
+  .profile-card { padding: 15px; }
+  .profile-index { font-size: 10px; }
+  .profile-card h4 { font-size: 14px; }
+  .case-card { min-width: 0; }
+}
 @media print {
   @page { size: A4; margin: 13mm; }
   html { scroll-behavior: auto; }
