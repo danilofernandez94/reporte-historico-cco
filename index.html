@@ -6,23 +6,45 @@
   <meta name="description" content="Reporte histórico de Café Conquistadores. Inversión publicitaria, consultas comerciales, productos de interés y visibilidad de marca entre abril y septiembre de 2026.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#171715">
-  <title>Café Conquistadores · Reporte histórico 2026</title>
+  <title>Pauta · Café Conquistadores · Reporte histórico 2026</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
   <script src="report.js" defer></script>
 </head>
-<body>
+<body class="report-shell" data-report="paid">
   <a class="skip-link" href="#contenido">Ir al reporte</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#inicio" aria-label="Café Conquistadores, inicio del reporte">
+      <a class="brand" href="index.html#inicio" aria-label="Café Conquistadores, inicio del reporte de pauta">
         <span class="brand-mark"><span class="brand-fallback" aria-hidden="true">CC</span><img src="assets/logo-conquistadores.png" alt="" width="48" height="48" data-optional-asset></span>
-        <span class="brand-name">Café Conquistadores<small>Reporte histórico · 2026</small></span>
+        <span class="brand-name">Café Conquistadores<small>Reporte histórico · Pauta</small></span>
       </a>
-      <nav class="desktop-nav" aria-label="Secciones del reporte">
-        <a href="#presupuesto">Inversión</a>
-        <a href="#leads">Contactos</a>
-        <a href="#canales">Canales</a>
-        <a href="#seguimiento">Seguimiento</a>
+      <nav class="report-navigation" aria-label="Reportes históricos">
+        <div class="report-menu is-active" data-report-menu>
+          <a class="nav-page-link" href="index.html" aria-current="page">Pauta</a>
+          <button class="nav-toggle" type="button" aria-label="Ver secciones de Pauta" aria-expanded="false" aria-controls="nav-paid"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <div class="nav-dropdown" id="nav-paid" hidden>
+            <p class="nav-dropdown-label">Pauta · abril–septiembre</p>
+            <a href="index.html#inicio">Resumen del período</a>
+            <a href="index.html#presupuesto">Inversión</a>
+            <a href="index.html#leads">Contactos y consultas</a>
+            <a href="index.html#canales">Meta y Google</a>
+            <a href="index.html#visibilidad">Visibilidad de marca</a>
+            <a href="index.html#seguimiento">Seguimiento comercial</a>
+          </div>
+        </div>
+        <div class="report-menu" data-report-menu>
+          <a class="nav-page-link" href="redes-sociales.html">Redes sociales</a>
+          <button class="nav-toggle" type="button" aria-label="Ver secciones de Redes sociales" aria-expanded="false" aria-controls="nav-social"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <div class="nav-dropdown" id="nav-social" hidden>
+            <p class="nav-dropdown-label">Redes sociales · abr–oct</p>
+            <a href="redes-sociales.html#resumen-redes">Panorama de las cuentas</a>
+            <a href="redes-sociales.html#instagram">Instagram</a>
+            <a href="redes-sociales.html#facebook">Facebook</a>
+            <a href="redes-sociales.html#trafico-redes">Tráfico y comunidad</a>
+            <a href="redes-sociales.html#lectura-redes">Lectura del período</a>
+          </div>
+        </div>
       </nav>
       <button class="print-button" type="button" id="print-report" aria-label="Guardar o imprimir el reporte como PDF">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z"/><path d="M17 11h1"/></svg>
@@ -36,7 +58,7 @@
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow light"><span class="small-line"></span>Abril — septiembre 2026</p>
+          <p class="eyebrow light"><span class="small-line"></span>Pauta · abril — septiembre 2026</p>
           <h1 id="hero-title">Seis meses de<br><em>oportunidades.</em></h1>
           <p class="hero-description">La inversión en pauta, los negocios que se contactaron y las oportunidades registradas desde el inicio de la cuenta.</p>
           <div class="hero-tags"><span>Café mayorista</span><span>Equipamiento</span><span>Negocios gastronómicos</span></div>

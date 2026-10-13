@@ -255,8 +255,7 @@
 
   function preparePrint() {
     if (printState) return;
-    printState = { view: budgetView, month: selectedMonth, details: Array.from(document.querySelectorAll("details"), detail => ({ detail, open: detail.open })) };
-    document.querySelectorAll("details").forEach(detail => { detail.open = true; });
+    printState = { view: budgetView, month: selectedMonth };
     setBudgetView("actual");
     drawContactsChart();
   }
@@ -265,7 +264,6 @@
     if (!printState) return;
     const state = printState;
     printState = null;
-    state.details.forEach(({ detail, open }) => { detail.open = open; });
     setBudgetView(state.view);
     selectedMonth = state.month;
     updateReadout();
@@ -292,38 +290,8 @@
       }
     });
   });
-  byId("print-report").addEventListener("click", () => window.print());
   window.addEventListener("beforeprint", preparePrint);
   window.addEventListener("afterprint", restoreAfterPrint);
-
-  document.querySelectorAll("[data-optional-asset]").forEach(img => {
-    const hideMissing = () => img.classList.add("asset-missing");
-    img.addEventListener("error", hideMissing);
-    if (img.complete && img.naturalWidth === 0) hideMissing();
-  });
-
-  function updateProgress() {
-    const distance = document.documentElement.scrollHeight - window.innerHeight;
-    byId("reading-progress").style.width = (distance > 0 ? Math.max(0, Math.min(100, window.scrollY / distance * 100)) : 0) + "%";
-  }
-  let scrollFrame = null;
-  window.addEventListener("scroll", () => {
-    if (scrollFrame) return;
-    scrollFrame = requestAnimationFrame(() => {
-      updateProgress();
-      scrollFrame = null;
-    });
-  }, { passive: true });
-
-  if ("IntersectionObserver" in window) {
-    const navLinks = Array.from(document.querySelectorAll(".desktop-nav a"));
-    const navObserver = new IntersectionObserver(entries => {
-      entries.filter(entry => entry.isIntersecting).forEach(entry => {
-        navLinks.forEach(link => link.classList.toggle("is-current", link.getAttribute("href") === "#" + entry.target.id));
-      });
-    }, { rootMargin: "-15% 0px -65% 0px", threshold: 0 });
-    document.querySelectorAll("#presupuesto, #leads, #canales, #seguimiento").forEach(section => navObserver.observe(section));
-  }
 
   drawInvestmentChart();
   drawInvestmentDonut();
@@ -332,7 +300,6 @@
   // Los contenedores recién visibles necesitan una medición con su ancho final.
   drawInvestmentChart();
   drawContactsChart();
-  updateProgress();
   if ("ResizeObserver" in window) {
     const observer = new ResizeObserver(resizeCharts);
     observer.observe(byId("investment-chart"));
