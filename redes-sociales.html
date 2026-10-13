@@ -21,10 +21,10 @@
       </a>
       <nav class="report-navigation" aria-label="Reportes históricos">
         <div class="report-menu" data-report-menu>
-          <a class="nav-page-link" href="index.html">Pauta</a>
-          <button class="nav-toggle" type="button" aria-label="Ver secciones de Pauta" aria-expanded="false" aria-controls="nav-paid"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <button class="nav-page-link nav-toggle" type="button" aria-label="Ver secciones de Pauta" aria-expanded="false" aria-controls="nav-paid"><span class="nav-page-name">Pauta</span><span class="nav-page-caption">Ver secciones</span></button>
           <div class="nav-dropdown" id="nav-paid" hidden>
             <p class="nav-dropdown-label">Pauta · abril–septiembre</p>
+            <a class="nav-overview-link" href="index.html">Ver el reporte completo</a>
             <a href="index.html#inicio">Resumen del período</a>
             <a href="index.html#presupuesto">Inversión</a>
             <a href="index.html#leads">Contactos y consultas</a>
@@ -34,10 +34,10 @@
           </div>
         </div>
         <div class="report-menu is-active" data-report-menu>
-          <a class="nav-page-link" href="redes-sociales.html" aria-current="page">Redes sociales</a>
-          <button class="nav-toggle" type="button" aria-label="Ver secciones de Redes sociales" aria-expanded="false" aria-controls="nav-social"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <button class="nav-page-link nav-toggle" type="button" aria-label="Ver secciones de Redes sociales" aria-current="page" aria-expanded="false" aria-controls="nav-social"><span class="nav-page-name">Redes sociales</span><span class="nav-page-caption">Ver secciones</span></button>
           <div class="nav-dropdown" id="nav-social" hidden>
             <p class="nav-dropdown-label">Redes sociales · abr–oct</p>
+            <a class="nav-overview-link" href="redes-sociales.html">Ver el reporte completo</a>
             <a href="redes-sociales.html#resumen-redes">Panorama de las cuentas</a>
             <a href="redes-sociales.html#instagram">Instagram</a>
             <a href="redes-sociales.html#facebook">Facebook</a>
@@ -46,6 +46,7 @@
           </div>
         </div>
       </nav>
+      <nav class="report-fallback-nav no-js-only" aria-label="Reportes históricos sin JavaScript"><a href="index.html">Pauta</a><a href="redes-sociales.html" aria-current="page">Redes sociales</a></nav>
       <button class="print-button" type="button" id="print-report" aria-label="Guardar o imprimir el reporte de redes sociales como PDF">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z"/><path d="M17 11h1"/></svg>
         <span>Guardar PDF</span>

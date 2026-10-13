@@ -3,8 +3,18 @@
   "use strict";
 
   const groups = Array.from(document.querySelectorAll("[data-report-menu]"));
+  const hoverOpened = new Set();
+  const closeTimers = new Map();
+
+  function cancelClose(group) {
+    if (!closeTimers.has(group)) return;
+    clearTimeout(closeTimers.get(group));
+    closeTimers.delete(group);
+  }
 
   function closeMenu(group, returnFocus = false) {
+    cancelClose(group);
+    hoverOpened.delete(group);
     const button = group.querySelector(".nav-toggle");
     const menu = group.querySelector(".nav-dropdown");
     const wasOpen = button.getAttribute("aria-expanded") === "true";
@@ -14,19 +24,35 @@
     if (returnFocus && wasOpen) button.focus();
   }
 
-  function openMenu(group, focusFirst = false) {
+  function openMenu(group, focusFirst = false, fromHover = false) {
+    cancelClose(group);
     groups.filter(other => other !== group).forEach(other => closeMenu(other));
     group.querySelector(".nav-toggle").setAttribute("aria-expanded", "true");
     group.querySelector(".nav-dropdown").hidden = false;
     group.classList.add("is-open");
+    if (fromHover) hoverOpened.add(group);
+    else hoverOpened.delete(group);
     if (focusFirst) group.querySelector(".nav-dropdown a")?.focus();
   }
 
   groups.forEach(group => {
     const button = group.querySelector(".nav-toggle");
     button.addEventListener("click", () => {
-      if (button.getAttribute("aria-expanded") === "true") closeMenu(group);
+      if (button.getAttribute("aria-expanded") === "true" && !hoverOpened.has(group)) closeMenu(group);
       else openMenu(group);
+    });
+    group.addEventListener("pointerenter", event => {
+      if (event.pointerType !== "mouse") return;
+      cancelClose(group);
+      if (button.getAttribute("aria-expanded") === "false") openMenu(group, false, true);
+    });
+    group.addEventListener("pointerleave", event => {
+      if (event.pointerType !== "mouse") return;
+      cancelClose(group);
+      closeTimers.set(group, setTimeout(() => {
+        closeTimers.delete(group);
+        if (!group.contains(document.activeElement)) closeMenu(group);
+      }, 160));
     });
     button.addEventListener("keydown", event => {
       if (event.key === "ArrowDown") {
